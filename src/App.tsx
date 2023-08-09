@@ -1,5 +1,4 @@
 import { Card, Footer, Header, Navbar } from "./components";
-import weather from "./dummy_weather.json";
 import { isObjectEmpty } from "./utils";
 import { CalendarSolidIcon } from "./assets";
 import { useFetch } from "./hooks/useFetch";

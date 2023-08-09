@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import dummyWeather from '../dummy_weather.json';
 
 const BASE_URL = import.meta.env.VITE_WEATHER_ENDPOINT;
 const KEY = import.meta.env.VITE_API_KEY;
@@ -22,7 +23,7 @@ export const useFetch = () => {
 
         return data;
       } catch (error) {
-        return error;
+        return dummyWeather[0];
       }
     }
 
@@ -30,8 +31,8 @@ export const useFetch = () => {
       .then((res) => {
         setWeatherData({ ...res });
       })
-      .catch((err) => {
-        //
+      .catch((dummy) => {
+        setWeatherData({ ...dummy}) 
       });
   }, []);
   return [weatherData]
